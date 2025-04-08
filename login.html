@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleLogin.css">
+    <link rel="icon" href="images/logo.svg" type="image/x-icon"/> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> 
+    <title>RayoCinema</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <form action="">
+            <h1>Inicia Sesión</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Usuario" required>
+                <i class="bi bi-person-fill"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Contraseña" required>
+                <i class="bi bi-lock-fill"></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox">Recuérdame</label>
+                <a href="#">¿Olvidaste la contraseña?</a>
+            </div>
+
+            <button class="btn" onclick="location.href='index.html'">Iniciar Sesión</button>
+
+            <div class="register-link">
+                <a href="#">Regístrate</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.querySelectorAll('.input-box input').forEach(input => {
+            const icon = input.nextElementSibling;
+
+            input.addEventListener('input', () => {
+                if (input.value.trim() != '') {
+                    icon.style.opacity = '0';
+                } else {
+                    icon.style.opacity = 1;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
